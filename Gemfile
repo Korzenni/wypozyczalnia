@@ -28,6 +28,12 @@ group :development do
   gem 'rails_apps_testing'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'letter_opener'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :development, :test do
