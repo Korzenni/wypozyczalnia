@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   def business_partner?
     companies.count > 0
   end
+
+  def company
+    companies.first
+  end
 end

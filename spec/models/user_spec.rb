@@ -26,6 +26,10 @@ describe User do
     it "#business_partner? should return true" do
       expect(user.business_partner?).to eq true
     end
+
+    it "#company should return its first company" do
+      expect(user.company).to eq user.companies.first
+    end
   end
 
 end
