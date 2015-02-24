@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   has_many :companies, through: :memberships
 
   accepts_nested_attributes_for :companies
+
+  def business_partner?
+    companies.count > 0
+  end
 end
