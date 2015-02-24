@@ -3,6 +3,6 @@ class Membership < ActiveRecord::Base
   belongs_to :company
 
   validates :user_id, presence: true
-  validate :company_id, presence: true
-  validate :role, presence: true
+  validates :company_id, presence: true
+  validates :role, presence: true
 end
