@@ -1,0 +1,6 @@
+%h2= "Invite new user to #{@company.name}"
+= simple_form_for @user, url: custom_create_user_invitation_path(@user) do |f|
+  = f.error_notification
+  .form-group
+    = f.input :email,  placeholder: 'Email', label: false, required: true, autofocus: true, input_html: { class: 'form-control' }
+  = f.button :submit, "Invite"
