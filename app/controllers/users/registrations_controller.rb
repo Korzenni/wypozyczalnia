@@ -1,4 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :redirect_if_signed_in!
+
   def new_company
     @user = User.new
     @user.companies.build
@@ -19,5 +21,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create_company_params
     params.require(:user).permit(:email, :password, :password_confirmation, companies_attributes: :name)
+  end
+
+  def redirect_if_signed_in!
+    redirect_to root_path, notice: "You have already signed up!" if current_user
   end
 end
