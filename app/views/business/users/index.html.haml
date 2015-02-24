@@ -1,0 +1,24 @@
+.panel.panel-default
+  .panel-heading
+    = "Users in #{@company.name}"
+    = link_to "Add new user", custom_new_user_invitation_path, class: "btn btn-default pull-right"
+  %table.table
+    %tr
+      %th
+        No.
+      %th
+        Email
+      %th
+        Last sign in at
+      %th
+        Actions
+    - @users.each_with_index do |user, index|
+      %tr
+        %td
+          = "##{index}"
+        %td
+          = user.email
+        %td
+          = user.last_sign_in_at
+        %td
+          Actions
