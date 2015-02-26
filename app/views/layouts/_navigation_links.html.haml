@@ -1,5 +1,14 @@
-%li
-  - if current_user
+- if current_user
+  %li
     = link_to 'Sign out', destroy_user_session_path, method: :delete
-  - else
+- else
+  %li
     = link_to 'Sign up', new_user_registration_path
+  %li
+    = link_to 'Become business partner', new_company_path
+
+- if current_user && current_user.business_partner?
+  %li
+    = link_to 'Business', business_dashboard_path
+
+
