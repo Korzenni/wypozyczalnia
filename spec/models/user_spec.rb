@@ -16,6 +16,10 @@ describe User do
     it "#business_partner? should return false" do
       expect(subject.business_partner?).to eq false
     end
+
+    it "#role should return nil" do
+      expect(subject.role).to eq nil
+    end
   end
 
   describe "has company" do
@@ -29,6 +33,10 @@ describe User do
 
     it "#company should return its first company" do
       expect(user.company).to eq user.companies.first
+    end
+
+    it "#role returns users role in company" do
+      expect(user.role).to eq user.memberships.first.role
     end
   end
 

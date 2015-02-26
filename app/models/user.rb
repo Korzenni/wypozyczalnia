@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
   def company
     companies.first
   end
+
+  def role
+    memberships.first.try(:role)
+  end
 end
