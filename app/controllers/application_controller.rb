@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def redirect_if_not_business_partner
-      redirect_to root_path, notice: 'You are not business partner.' unless current_user.business_partner?
-    end
+    redirect_to root_path, notice: 'You are not business partner.' unless current_user.business_partner?
+  end
 end

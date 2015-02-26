@@ -25,7 +25,5 @@ module Users
         render :new
       end
     end
-
-
   end
 end
