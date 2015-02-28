@@ -20,4 +20,12 @@ class User < ActiveRecord::Base
   def role
     memberships.first.try(:role)
   end
+
+  def is_owner?
+    memberships.first.try(:role) == 2
+  end
+
+  def has_permissions?
+    memberships.first.try(:role) == 2 || memberships.first.try(:role) == 1
+  end
 end

@@ -21,4 +21,5 @@
         %td
           = user.last_sign_in_at
         %td
-          Actions
+          - unless user.is_owner? || user == current_user
+            = link_to 'Destroy', business_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }
