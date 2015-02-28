@@ -12,7 +12,7 @@ module Business
     def destroy
       @company = current_user.company
       user = User.find(params[:id])
-      if !user.is_owner? && @company.users.include?(user)
+      if !user.is_owner? && @company.users.include?(user) && user != current_user
         user.destroy
         flash[:notice] = "You deleted user with success."
       else
