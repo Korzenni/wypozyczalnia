@@ -17,6 +17,7 @@ gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
 gem 'figaro'
+gem 'sprig'
 
 group :development do
   gem 'capistrano', '~> 3.0.1'
