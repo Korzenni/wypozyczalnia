@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :validatable,
          :recoverable, :rememberable, :trackable, :invitable
 
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :companies, through: :memberships
 
   accepts_nested_attributes_for :companies
