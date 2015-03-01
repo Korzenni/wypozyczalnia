@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   namespace :business do
     get "dashboard", to: "dashboard#show", as: :dashboard
-    resources :users, only: [:index, :destroy]
+    resources :users, only: [:index, :destroy] do
+        post "toggle_role", on: :member
+    end
   end
 end
