@@ -29,6 +29,17 @@ class User < ActiveRecord::Base
     memberships.first.try(:role) == 2 || memberships.first.try(:role) == 1
   end
 
+  def toggle_role!
+    case role
+    when 0
+      memberships.first.update_attributes(role: 1)
+    when 1
+      memberships.first.update_attributes(role: 0)
+    else
+      raise "User's role cannot be toggled! (is owner)"
+    end
+  end
+
   def possible_roles
     case role
     when 0

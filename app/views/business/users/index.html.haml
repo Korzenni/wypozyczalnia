@@ -9,6 +9,8 @@
       %th
         Email
       %th
+        Role
+      %th
         Last sign in at
       %th
         Actions
@@ -18,6 +20,18 @@
           = "##{index}"
         %td
           = user.email
+        %td
+          - if current_user.has_permissions? && !user.is_owner?
+            .btn-group
+              %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
+                = user.current_role
+                %span.carret
+              %ul.dropdown-menu{:role => "menu"}
+                - user.possible_roles.each do |role|
+                  %li
+                    = link_to "#{parse_role(role)}", toggle_role_business_user_path(user), method: :post
+          - else
+            = user.current_role
         %td
           = user.last_sign_in_at
         %td
