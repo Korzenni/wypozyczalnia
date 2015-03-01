@@ -1,0 +1,16 @@
+%h2
+  Edit your account
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name, placeholder: "Name", label: false
+    = f.input :password, autocomplete: "off", required: false, placeholder: "Password", label: false
+    = f.input :password_confirmation, required: false, placeholder: "Confirm password", label: false
+    = f.input :current_password, required: true, placeholder: "Current password", label: false
+
+  .form-actions
+    = f.button :submit, "Update"
+%h3 Cancel my account
+%p
+  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+= link_to "Back", :back
