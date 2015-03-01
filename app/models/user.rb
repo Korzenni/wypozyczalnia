@@ -28,4 +28,15 @@ class User < ActiveRecord::Base
   def has_permissions?
     memberships.first.try(:role) == 2 || memberships.first.try(:role) == 1
   end
+
+  def possible_roles
+    case role
+    when 0
+      [1]
+    when 1
+      [0]
+    else
+      []
+    end
+  end
 end
