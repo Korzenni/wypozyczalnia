@@ -8,10 +8,6 @@ describe User do
 
   it { should respond_to(:business_partner?) }
 
-  it "#email returns a string" do
-    expect(subject.email).to match 'test@example.com'
-  end
-
   describe "has no company" do
     it "#business_partner? should return false" do
       expect(subject.business_partner?).to eq false
