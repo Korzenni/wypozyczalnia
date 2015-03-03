@@ -1,2 +1,9 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.haml
+- if @items.length > 0
+  %ul
+    - @items.each do |item|
+      %li
+        @item.name
+- else
+  %h3
+    No items.
+  = link_to 'Create new item', new_business_item_path

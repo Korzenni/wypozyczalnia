@@ -1,2 +1,9 @@
-%h1 ItemCategories#index
-%p Find me in app/views/item_categories/index.html.haml
+- if @item_categories.length > 0
+  %ul
+    - @item_categories.each do |item_category|
+      %li
+        @item_category.name
+- else
+  %h3
+    No item categories.
+  = link_to 'Create new item category', new_business_item_category_path
