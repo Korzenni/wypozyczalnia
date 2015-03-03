@@ -1,0 +1,13 @@
+records:
+  - sprig_id: 1
+    company_id: "<%= sprig_record(Company, 1).id %>"
+    name: "Bike"
+    price: "19.90"
+    deposit: "100.00"
+    description: "Mountain biking is the sport of riding bicycles off-road, often over rough terrain, using specially designed mountain bikes. Mountain bikes share similarities with other bikes, but incorporate features designed to enhance durability and performance in rough terrain."
+  - sprig_id: 2
+    company_id: "<%= sprig_record(Company, 1).id %>"
+    name: "Tent"
+    price: "19.90"
+    deposit: "100.00"
+    description: "The second type are larger, heavier tents which are usually carried in a car or other vehicle. Depending on tent size and the experience of the person or people involved, such tents can usually be assembled (pitched) in between 5 and 25 minutes; disassembly (striking) takes a similar length of time."

@@ -1,0 +1,33 @@
+records:
+  - sprig_id: 1
+    company_id: "<%= sprig_record(Company, 1).id %>"
+    item_category_id: "<%= sprig_record(ItemCategory, 1).id %>"
+    name: "Mountain Bike XC200"
+    price: "19.90"
+    deposit: "100.00"
+    description: "Mountain biking is the sport of riding bicycles off-road, often over rough terrain, using specially designed mountain bikes. Mountain bikes share similarities with other bikes, but incorporate features designed to enhance durability and performance in rough terrain."
+    inventory_number: "JS-200-14/2"
+  - sprig_id: 2
+    company_id: "<%= sprig_record(Company, 1).id %>"
+    item_category_id: "<%= sprig_record(ItemCategory, 1).id %>"
+    name: "City Bike NY20"
+    price: "10.50"
+    deposit: "50.00"
+    description: "Generally as they are more suitable for urban environments, they focus more on comfort and practicality instead of speed or efficiency. They normally have a slightly curved, roughly planar aligned and elevated handlebar, providing users a straight sitting position. They have fewer gears and they often are heavier than road bicycles."
+    inventory_number: "JS-150-13/1"
+  - sprig_id: 3
+    company_id: "<%= sprig_record(Company, 1).id %>"
+    item_category_id: "<%= sprig_record(ItemCategory, 2).id %>"
+    name: "Tent Big LC1"
+    price: "10.00"
+    deposit: "80.00"
+    description: "A tent is a shelter consisting of sheets of fabric or other material draped over, attached to a frame of poles or attached to a supporting rope. While smaller tents may be free-standing or attached to the ground, large tents are usually anchored using guy ropes tied to stakes or tent pegs."
+    inventory_number: "XS-200-50/2"
+  - sprig_id: 4
+    company_id: "<%= sprig_record(Company, 1).id %>"
+    item_category_id: "<%= sprig_record(ItemCategory, 2).id %>"
+    name: "Family Tent F-4"
+    price: "19.90"
+    deposit: "100.00"
+    description: "Tents for recreational camping fall into two categories. Tents intended to be carried by backpackers are the smallest and lightest type. Small tents may be sufficiently light that they can be carried for long distances on a touring bicycle, a boat, or when backpacking."
+    inventory_number: "JS-200-14/2"
