@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy] do
         post "toggle_role", on: :member
     end
+    resources :items, only: [:index, :show, :new]
+    resources :item_categories, only: [:index, :show, :new]
   end
 end
