@@ -8,10 +8,6 @@ describe User do
 
   it { should respond_to(:business_partner?) }
 
-  it "#email returns a string" do
-    expect(subject.email).to match 'test@example.com'
-  end
-
   describe "has no company" do
     it "#business_partner? should return false" do
       expect(subject.business_partner?).to eq false
@@ -37,6 +33,38 @@ describe User do
 
     it "#role returns users role in company" do
       expect(user.role).to eq user.memberships.first.role
+    end
+
+    context "and is owner of this company" do
+      before { user.memberships.first.update_attributes(role: 2) }
+      it "#is_owner? returns true" do
+        expect(subject.is_owner?).to eq true
+      end
+    end
+
+    context "and is owner or admin of this company" do
+      it "#has_permissions? return true if admin" do
+        user.memberships.first.update_attributes(role: 2)
+        expect(subject.has_permissions?).to eq true
+      end
+
+      it "#has_permissions? return true if owner" do
+        user.memberships.first.update_attributes(role: 1)
+        expect(subject.has_permissions?).to eq true
+      end
+
+      it "#has_permissions? return false if user" do
+        user.memberships.first.update_attributes(role: 0)
+        expect(subject.has_permissions?).to eq false
+      end
+    end
+
+    it "#toggle_role! toggles role from admin to user and back" do
+      user.memberships.first.update_attributes(role: 0)
+      expect { subject.toggle_role! }.to change { subject.role }.to(1)
+      expect { subject.toggle_role! }.to change { subject.role }.to(0)
+      user.memberships.first.update_attributes(role: 2)
+      expect { subject.toggle_role! }.to raise_error
     end
   end
 

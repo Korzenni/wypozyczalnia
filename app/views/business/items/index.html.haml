@@ -1,0 +1,9 @@
+- if @items.length > 0
+  %ul
+    - @items.each do |item|
+      %li
+        = item.name
+- else
+  %h3
+    No items.
+  = link_to 'Create new item', new_business_item_path
