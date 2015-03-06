@@ -20,6 +20,7 @@ gem 'figaro'
 gem 'sprig'
 gem 'draper'
 
+
 group :development do
   gem 'capistrano', '~> 3.0.1'
   gem 'capistrano-bundler'

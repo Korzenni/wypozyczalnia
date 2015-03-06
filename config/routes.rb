@@ -14,5 +14,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy] do
         post "toggle_role", on: :member
     end
+    namespace :settings do
+      get "hours", to: "settings#hours", as: :hours
+    end
   end
 end
