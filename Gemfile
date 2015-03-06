@@ -21,7 +21,9 @@ gem 'sprig'
 gem 'draper'
 gem 'therubyracer'
 gem 'omniauth'
-gem 'omniauth-digitalocean'
+gem 'omniauth-twitter'
+gem 'omniauth-google'
+gem 'omniauth-facebook'
 
 
 group :development do
