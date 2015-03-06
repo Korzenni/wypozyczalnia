@@ -19,6 +19,9 @@ gem 'simple_form'
 gem 'figaro'
 gem 'sprig'
 gem 'draper'
+gem 'therubyracer'
+gem 'omniauth'
+gem 'omniauth-digitalocean'
 
 
 group :development do
