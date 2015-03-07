@@ -4,11 +4,11 @@
 = simple_form_for @item, url: business_items_path do |f|
   = f.error_notification
   .form-group
-    = f.hidden_field :item_category, id: 'item-category', data: { source: business_item_categories_path }
+    = f.hidden_field :item_category, id: 'item-category-value', data: { source: business_item_categories_path }
   = f.input :name, placeholder: 'Name', label: false, required: true, autofocus: true
   = f.input :price, placeholder: 'Price', label: false, required: true
   = f.input :inventory_number, placeholder: 'Inventory number', label: false, required: true
-  = f.input :deposit, placeholder: 'Price', label: false
+  = f.input :deposit, placeholder: 'Deposit', label: false
   = f.input :description, placeholder: 'Description', label: false, required: true
 
   = f.button :submit, 'Create'

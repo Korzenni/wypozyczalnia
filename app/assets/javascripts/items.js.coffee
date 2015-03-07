@@ -3,8 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  select2 = $("input#item-category")
-  $("input#item-category").select2
+  select2 = $("input#item-category-value")
+  $("input#item-category-value").select2
     placeholder: "Select item category or create new"
     containerCssClass: "form-control"
     ajax:
