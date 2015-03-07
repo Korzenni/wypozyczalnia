@@ -25,3 +25,15 @@ $(document).ready ->
           text: term
         }
       return
+
+  $("#item-category-value").on 'change', ->
+    console.log("Entered")
+    value = $("#item-category-value").val()
+    select2 = $("input#item-category-value")
+    if !isNaN(parseInt(value, 10))
+      console.log("Parsed")
+      $.ajax
+        url: select2.data("source") + "/#{value}"
+        dataType: "script"
+    return
+

@@ -1,0 +1,4 @@
+$("#item_name").val("<%= escape_javascript(@item_category.name) %>");
+$("#item_price").val("<%= @item_category.price %>");
+$("#item_deposit").val("<%= @item_category.deposit %>");
+$("#item_description").val("<%= escape_javascript(@item_category.description) %>");
