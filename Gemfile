@@ -24,7 +24,8 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-google'
 gem 'omniauth-facebook'
-
+gem "select2-rails"
+gem "pg_search"
 
 group :development do
   gem 'capistrano', '~> 3.0.1'
