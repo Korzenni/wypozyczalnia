@@ -38,17 +38,17 @@ group :development do
   gem 'rails_layout'
   gem 'spring-commands-rspec'
   gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'letter_opener'
-  gem 'pry-byebug'
-  gem 'pry-rails'
-  gem 'pry-stack_explorer'
 end
 
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'binding_of_caller'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :production do
