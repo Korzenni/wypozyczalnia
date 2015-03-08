@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :item_category do
     name "Example Item Category"
     price "9.99"
+    association :company
 
     trait :with_deposit do
       deposit "5.00"
