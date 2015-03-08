@@ -16,7 +16,6 @@ class ItemCreator
 
   def find_or_create_category
     @item_category = @params[:item][:item_category]
-    binding.pry
     return unless @item_category.length > 0
     if @item_category.to_i > 0
       @item.update_attributes(item_category_id: @item_category)
