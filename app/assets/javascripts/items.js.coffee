@@ -35,5 +35,10 @@ $(document).ready ->
       $.ajax
         url: select2.data("source") + "/#{value}"
         dataType: "script"
+    else
+      $("#item_name").val("");
+      $("#item_price").val("");
+      $("#item_deposit").val("");
+      $("#item_description").val("");
     return
 
