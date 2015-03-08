@@ -16,19 +16,19 @@ module Business
     end
 
     def create
-      @item = Item.new(item_params)
-      @item.company = current_user.company
-      if @item.save
+      @item_creator = ItemCreator.new(params, current_user)
+      @item_creator.create
+      if @item_creator.saved?
+        @item_creator.find_or_create_category
         redirect_to business_items_path, notice: 'You created item with success.'
       else
+        @item = @item_creator.item
         render :new
       end
     end
 
     private
 
-    def item_params
-      params.require(:item).permit(:name, :price, :deposit, :description, :inventory_number)
-    end
+
   end
 end
