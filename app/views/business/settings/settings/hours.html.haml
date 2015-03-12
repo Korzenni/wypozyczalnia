@@ -1,1 +1,36 @@
-doopa
+%h2 Business hours settings for #{@company.name}.
+
+#settings-hours-accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+  .panel.panel-default
+    #headingOne.panel-heading{:role => "tab"}
+      %h4.panel-title
+        %a{"aria-controls" => "hours-every-day", "aria-expanded" => "true", "data-parent" => "#settings-hours-accordion", "data-toggle" => "collapse", :href => "#hours-every-day"}
+          Set one range for each day
+    #hours-every-day.panel-collapse.collapse.in{"aria-labelledby" => "headingOne", :role => "tabpanel"}
+      .panel-body
+        = simple_form_for(@company, url: business_settings_hours_save_path) do |f|
+          = f.simple_fields_for :business_hours do |c|
+            %h3 #{c.object.day}
+            .form-group
+              = c.input_field :open, label: false, required: true
+              = c.input_field :close, label: false, required: true
+              = c.hidden_field :day
+              = c.hidden_field :id
+          = f.button :submit, 'Save', class: 'btn btn-default'
+
+  .panel.panel-default
+    #headingTwo.panel-heading{:role => "tab"}
+      %h4.panel-title
+        %a.collapsed{"aria-controls" => "hours-weekgroups", "aria-expanded" => "false", "data-parent" => "#settings-hours-accordion", "data-toggle" => "collapse", :href => "#hours-weekgroups"}
+          Set for weekday and weekend seperately
+    #hours-weekgroups.panel-collapse.collapse{"aria-labelledby" => "headingTwo", :role => "tabpanel"}
+      .panel-body
+
+  .panel.panel-default
+    #headingThree.panel-heading{:role => "tab"}
+      %h4.panel-title
+        %a.collapsed{"aria-controls" => "hours-seperate", "aria-expanded" => "false", "data-parent" => "#settings-hours-accordion", "data-toggle" => "collapse", :href => "#hours-seperate"}
+          Set for each day seperately
+    #hours-seperate.panel-collapse.collapse{"aria-labelledby" => "headingThree", :role => "tabpanel"}
+      .panel-body
+

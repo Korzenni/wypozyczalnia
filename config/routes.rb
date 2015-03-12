@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
     namespace :settings do
       get "hours", to: "settings#hours", as: :hours
+      put "hours", to: "settings#save_hours", as: :hours_save
     end
     resources :items, only: [:index, :show, :new, :create]
     resources :item_categories, only: [:index, :show, :new, :create]
